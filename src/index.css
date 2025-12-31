@@ -1,0 +1,112 @@
+/* ================================
+   ALL IMPORTS MUST BE ON TOP
+================================ */
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+
+/* ================================
+   CASHPRO THEME (Tailwind v4)
+================================ */
+@theme {
+  --color-primary: #1E8E3E;
+  --color-primary-light: #2DBE60;
+  --color-accent: #FF8A00;
+  --color-dark: #0B0F0E;
+  --color-muted: #9CA3AF;
+
+  --gradient-primary: linear-gradient(90deg, #1E8E3E, #2DBE60);
+  --gradient-accent: linear-gradient(135deg, #2DBE60, #FF8A00);
+}
+
+/* ================================
+   GLOBAL BASE
+================================ */
+body {
+  @apply bg-white text-gray-900 antialiased;
+  font-family: "Inter", system-ui, sans-serif;
+  overflow: hidden;
+}
+
+/* ================================
+   HEADINGS
+================================ */
+h1, h2, h3 {
+  font-family: "Poppins", sans-serif;
+}
+
+/* ================================
+   GLOBAL COMPONENTS
+================================ */
+@layer components {
+  .btn-primary {
+    background: var(--color-primary);
+    color: white;
+    @apply px-6 py-3 rounded-lg font-medium transition-all;
+  }
+
+  .btn-primary:hover {
+    background: var(--color-primary-light);
+  }
+
+  .btn-gradient {
+    background: var(--gradient-primary);
+    color: white;
+    @apply px-6 py-3 rounded-lg font-semibold transition-all;
+  }
+
+  .card {
+    @apply bg-white rounded-xl shadow-md p-6;
+  }
+
+  .dark-card {
+    background: var(--color-dark);
+    color: white;
+    @apply rounded-xl p-6;
+  }
+}
+
+/* ----------------------------------------------------
+   PREMIUM SLIDER ANIMATION
+---------------------------------------------------- */
+
+/* Initial state (hidden) */
+.slide-content {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.9s ease-out,
+    transform 0.9s ease-out;
+}
+
+/* Animated-in state */
+.slide-content.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ----------------------------------------------------
+   SWIPER PAGINATION – PREMIUM FINTECH STYLE
+---------------------------------------------------- */
+
+.mySwiper .swiper-pagination-bullet {
+  background: white;
+  opacity: 0.4;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  transition: all 0.35s ease;
+}
+
+.mySwiper .swiper-pagination-bullet-active {
+  background: var(--color-primary-light); /* ✅ FIXED */
+  width: 28px;
+  opacity: 1;
+  box-shadow: 0 0 12px rgba(45, 190, 96, 0.6);
+}
+
+/* Pagination position */
+.mySwiper .swiper-pagination-bullets {
+  bottom: 32px !important;
+}
