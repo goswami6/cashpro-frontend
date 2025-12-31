@@ -16,10 +16,12 @@
     "exceljs": "^4.4.0",
     "framer-motion": "^12.23.26",
     "lucide-react": "^0.561.0",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
+    "react": "^18.2.0",
+"react-dom": "^18.2.0",
+"react-router-dom": "^6.26.2",
+
     "react-icons": "^5.5.0",
-    "react-router-dom": "^7.10.1",
+    
     "swiper": "^12.0.3"
   },
   "devDependencies": {
